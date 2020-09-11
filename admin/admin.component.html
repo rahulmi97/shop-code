@@ -1,0 +1,57 @@
+<div class="heading2">
+    <h2>Welcome {{name|titlecase}} Add your product here</h2>
+</div>
+
+<div > 
+    <label for="id">id</label>
+    <br> 
+    <label #id [innerText]='id1' for="" id="id"></label>
+    <br>
+    <label  for="name">name</label>
+    <br>
+    <input class="inp" #name1 type="text" name="" id="name">
+    <br>
+    <label  for="url">url</label>
+    <br>
+    <input class="inp" #url type="text" name="" id="url">
+    <br>
+    <label  for="price">price</label>
+    <br>
+    <input class="inp" #price type="number" name="" id="price">
+    <br>
+    <button class="btn" 
+    (click)=
+    "add({id:id.innerText,name:name1.value.charAt(0).toUpperCase()
+        +name1.value.substring(1).toLowerCase(),
+        url:url.value,price:price.value})"
+    >Add</button> &nbsp;
+   
+    <button (click)="delete()" class="dlt">delete</button>
+</div>
+<div [hidden]='flag1' >
+    <h2>Your product is Added</h2>
+    <button (click)="send()">See here</button>
+    <table cellpadding='auto'  width=100%>
+        <thead class="thead">
+            <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>url</th>
+                <th>NAME</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr  *ngFor="let key of item;let in=index">
+                    <td #i><input  (click)="checkbox(key.id,i,in)"  type="checkbox" name="check" id="checkbox"></td>
+                    <td>{{key.id}}</td>
+                    <td><img src={{key.url}} alt="alt"></td>
+                    <td>{{key.name}}</td>
+                    <td>{{key.price}}</td>
+                </tr>
+        </tbody>
+    </table>
+    
+</div>
+
+
