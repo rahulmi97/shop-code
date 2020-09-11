@@ -1,0 +1,27 @@
+
+  <form [formGroup]="regForm" (ngSubmit)="send()">
+    <div class="login1">
+    <label for="name">Name</label>
+    <br>
+    <input formControlName="uname"  type="text"  >
+    <br>
+    <span *ngIf="hide && regForm.get('uname').invalid &&   regForm.get('uname').errors['required']">Name is Required</span>
+
+    <br>
+    <select formControlName="urole"  >
+      <option value="-1">Select role</option>
+      <option value="admin">Admin</option>
+      <option value="customer">Customer</option>
+    </select>
+    <br>
+     
+     <span *ngIf="hide && regForm.get('urole').invalid  && regForm.get('urole').errors['selectrole'] ">You must have to select a role!</span>
+    <span ></span>
+     <br>
+  <button   type="submit">logIn</button>
+  <br>
+  <span *ngIf="hide">Form is Invalid</span>
+</div>
+  </form>
+
+
