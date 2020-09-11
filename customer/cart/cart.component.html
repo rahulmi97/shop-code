@@ -1,0 +1,25 @@
+<div class="carts">
+    <button class="btn2" (click)='show()'>Cart {{count}}</button>
+    <div >
+        <ul >
+            <li *ngFor="let mobile of Data">
+              <div class="row">
+                 <div class="img">
+                  <img src={{mobile.url}} alt="img">
+                 </div>
+                 <div class="desc">
+                   <br>
+                  <h2>{{mobile.name}}</h2>
+                  <br>
+                  <h3>{{mobile.price|currency:'INR'}}</h3>
+                  
+                  <button class="btn" (click)='remove(mobile.id)'>Remove</button>
+                 </div>
+              </div>
+                
+              
+            </li>
+          </ul>
+    </div>
+</div>
+
