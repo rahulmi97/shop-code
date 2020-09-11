@@ -1,0 +1,19 @@
+<ul >
+  <li *ngFor="let mobile of Data">
+    <div class="row">
+       <div class="img">
+        <img src={{mobile.url}} alt="img">
+       </div>
+       <div class="desc">
+         <br>
+        <h2>{{mobile.name}}</h2>
+        <br>
+        <h3>{{mobile.price|currency:'INR'}}</h3>
+        
+        <button class="btn" (click)='cart(mobile.id)'>Add2Cart</button>
+       </div>
+    </div>
+      
+    
+  </li>
+</ul>
